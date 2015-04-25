@@ -1,0 +1,47 @@
+﻿Build started 2015-04-25 19:49:03.
+     1>Project "C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\ZakladBukmacherski2\ZakladBukmacherski2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\ZakladBukmacherski2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZakladBukmacherski2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib AssemblyInfo.cpp Form2.cpp Klient.cpp KolekcjaKlientow.cpp Logowanie.cpp ObiektZakladu.cpp PostawionyZaklad.cpp Rejestracja.cpp WindowsFormApplication1.cpp Zaklad.cpp ZakladFormula1.cpp ZakladKoszykarski.cpp ZakladPilkarski.cpp
+         AssemblyInfo.cpp
+     1>AssemblyInfo.cpp(40): warning C4947: 'RequestMinimum' : marked as obsolete
+                 Message: 'Assembly level declarative security is obsolete and is no longer enforced by the CLR by default. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.'
+         Form2.cpp
+         Klient.cpp
+         KolekcjaKlientow.cpp
+         Logowanie.cpp
+         ObiektZakladu.cpp
+         PostawionyZaklad.cpp
+         Rejestracja.cpp
+         WindowsFormApplication1.cpp
+         Zaklad.cpp
+         ZakladFormula1.cpp
+         ZakladKoszykarski.cpp
+         ZakladPilkarski.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form1.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form2.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\Form2.obj
+         Debug\Klient.obj
+         Debug\KolekcjaKlientow.obj
+         Debug\Logowanie.obj
+         Debug\ObiektZakladu.obj
+         Debug\PostawionyZaklad.obj
+         Debug\Rejestracja.obj
+         Debug\stdafx.obj
+         Debug\WindowsFormApplication1.obj
+         Debug\Zaklad.obj
+         Debug\ZakladFormula1.obj
+         Debug\ZakladKoszykarski.obj
+         Debug\ZakladPilkarski.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         ZakladBukmacherski2.vcxproj -> C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.exe
+     1>Done Building Project "C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\ZakladBukmacherski2\ZakladBukmacherski2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.10
