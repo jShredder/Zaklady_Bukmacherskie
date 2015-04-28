@@ -89,7 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="DodajZespolForm.cpp" />
     <ClCompile Include="Form2.cpp" />
+    <ClCompile Include="Info.cpp" />
     <ClCompile Include="Klient.cpp" />
     <ClCompile Include="KolekcjaKlientow.cpp" />
     <ClCompile Include="Logowanie.cpp" />
@@ -101,16 +103,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="WindowsFormApplication1.cpp" />
+    <ClCompile Include="WprowadzWynikiForm.cpp" />
     <ClCompile Include="Zaklad.cpp" />
     <ClCompile Include="ZakladFormula1.cpp" />
     <ClCompile Include="ZakladKoszykarski.cpp" />
     <ClCompile Include="ZakladPilkarski.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DodajZespolForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Info.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Klient.h" />
@@ -121,6 +130,9 @@
     <ClInclude Include="Rejestracja.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="WprowadzWynikiForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Zaklad.h" />
     <ClInclude Include="ZakladFormula1.h" />
     <ClInclude Include="ZakladKoszykarski.h" />
@@ -130,12 +142,21 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DodajZespolForm.resx">
+      <DependentUpon>DodajZespolForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WprowadzWynikiForm.resx">
+      <DependentUpon>WprowadzWynikiForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
