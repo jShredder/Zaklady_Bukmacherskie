@@ -96,6 +96,7 @@
     <ClCompile Include="KolekcjaKlientow.cpp" />
     <ClCompile Include="Logowanie.cpp" />
     <ClCompile Include="ObiektZakladu.cpp" />
+    <ClCompile Include="PokazZyskiKlientow.cpp" />
     <ClCompile Include="PostawionyZaklad.cpp" />
     <ClCompile Include="Rejestracja.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -126,6 +127,9 @@
     <ClInclude Include="KolekcjaKlientow.h" />
     <ClInclude Include="Logowanie.h" />
     <ClInclude Include="ObiektZakladu.h" />
+    <ClInclude Include="PokazZyskiKlientow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PostawionyZaklad.h" />
     <ClInclude Include="Rejestracja.h" />
     <ClInclude Include="resource.h" />
@@ -154,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Info.resx">
       <DependentUpon>Info.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PokazZyskiKlientow.resx">
+      <DependentUpon>PokazZyskiKlientow.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WprowadzWynikiForm.resx">
       <DependentUpon>WprowadzWynikiForm.h</DependentUpon>

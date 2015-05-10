@@ -339,6 +339,8 @@ namespace ZakladBukmacherski2 {
 			// 
 			// label8
 			// 
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
 			this->label8->AutoSize = true;
 			this->label8->Location = System::Drawing::Point(581, 9);
 			this->label8->Name = L"label8";
@@ -405,6 +407,9 @@ private: System::Void wprowadzWynikiToolStripMenuItem_Click(System::Object^  sen
 }
 private: System::Void DodajZespolForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	label8->Text += userLogin;
+	Rectangle ekran = System::Windows::Forms::Screen::GetBounds(this);
+	this->Top = (ekran.Height / 2) - (this->Height / 2);
+	this->Left = (ekran.Width / 2) - (this->Width / 2);
 }
 };
 }

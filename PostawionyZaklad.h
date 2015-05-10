@@ -1,17 +1,15 @@
-#include "Zaklad.h"
-
 #pragma once
 ref class PostawionyZaklad
 {
 public:
 	PostawionyZaklad();
-	PostawionyZaklad(String^ i, Single k, String^ w);
+	PostawionyZaklad(String^ i, String^ w, Int16 k);
 	String^ getID_zakladu();
-	Single getKwota();
+	Int16 getKwota();
 	String^ getWynik();
 private:
 	String^ ID_zakladu;
-	Single kwota;
+	Int16 kwota;
 	String^ wynik;
 };
 

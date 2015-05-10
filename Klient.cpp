@@ -1,12 +1,16 @@
 #include "stdafx.h"
 #include "Klient.h"
 
-
-Klient::Klient(String^ i, String^ n, String^ t) :imie(i), nazwisko(n), telefon(t), zysk(0){
+Klient::Klient(String^ i, String^ n, String^ t) :imie(i), nazwisko(n), telefon(t){
+	listaZakladow = gcnew List<PostawionyZaklad^>();
 }
 
-Void Klient::aktualizujZysk(Int16 kwota){
+Klient::Klient(String^ i, String^ n, String^ t, Single z) :imie(i), nazwisko(n), telefon(t), zysk(z){
+	listaZakladow = gcnew List<PostawionyZaklad^>();
+}
 
+Void Klient::aktualizujZysk(Single kwota){
+	zysk += kwota;
 }
 
 Single Klient::getZysk(){
@@ -29,9 +33,9 @@ PostawionyZaklad^ Klient::getListaZakladow(Int16 index){
 	return listaZakladow[index];
 }
 Void Klient::uzupelnijListeZakladow(PostawionyZaklad^ postawionyZaklad){
-	listaZakladow.Add(postawionyZaklad);
+	listaZakladow->Add(postawionyZaklad);
 }
 
 Int16 Klient::getListCount(){
-	return listaZakladow.Count;
+	return listaZakladow->Count;
 }

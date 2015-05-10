@@ -1,4 +1,5 @@
 #pragma once
+#include "PokazZyskiKlientow.h"
 
 namespace ZakladBukmacherski2 {
 
@@ -170,13 +171,16 @@ namespace ZakladBukmacherski2 {
 			this->zatwierdz->TabIndex = 11;
 			this->zatwierdz->Text = L"ZatwierdŸ";
 			this->zatwierdz->UseVisualStyleBackColor = true;
+			this->zatwierdz->Click += gcnew System::EventHandler(this, &WprowadzWynikiForm::zatwierdz_Click);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
 			this->label3->Location = System::Drawing::Point(624, 9);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(94, 13);
+			this->label3->Size = System::Drawing::Size(111, 13);
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Zalogowany jako: ";
 			// 
@@ -245,8 +249,21 @@ namespace ZakladBukmacherski2 {
 	}
 #pragma endregion
 	private: System::Void WprowadzWynikiForm_Load(System::Object^  sender, System::EventArgs^  e) {
+		Rectangle ekran = System::Windows::Forms::Screen::GetBounds(this);
+		this->Top = (ekran.Height / 2) - (this->Height / 2);
+		this->Left = (ekran.Width / 2) - (this->Width / 2);
 		wczytajDatagrid1();
 		label3->Text += userLogin;
 	}
+private: System::Void zatwierdz_Click(System::Object^  sender, System::EventArgs^  e) {
+	StreamWriter^ plik = gcnew StreamWriter("BazaDanych\\wyniki.txt", true, System::Text::Encoding::Default);
+	String^ idZak;
+	for each(DataGridViewCell^ dgc in dataGridView1->SelectedCells){
+		idZak = dgc->Value->ToString();
+	}
+	plik->WriteLine(idZak);
+	plik->WriteLine(textBox1->Text);
+	plik->Close();
+}
 };
 }

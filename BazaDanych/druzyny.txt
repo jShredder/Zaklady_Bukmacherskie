@@ -46,9 +46,9 @@ ID=7
 3
 Walt_Ader
 10,3
-Gearge Amick
+Gearge_Amick
 12,23
-Mario Andretti
+Mario_Andretti
 13,34
 ###########
 ID=8
@@ -57,4 +57,20 @@ FC_Liverpool
 1,56
 Arsenal_Londyn
 1,24
+###########
+ID=9
+1
+Bayern_Monachium
+1,14
+Borussia_Dortmund
+1,89
+###########
+ID=10
+3
+Danii³_Kwiat
+7,65
+Max_Verstappen
+12,1
+Carlos_Sainz_Jr
+20,54
 ###########

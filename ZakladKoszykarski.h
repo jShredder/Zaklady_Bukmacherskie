@@ -8,7 +8,7 @@ public:
 	ZakladKoszykarski();
 	ZakladKoszykarski(ObiektZakladu^ obz1, ObiektZakladu^ obz2);
 	virtual Void dodajNowyZaklad() override;
-	virtual Void sprWyniki(Zaklad^ postawiony, Zaklad^ wynik) override;
+	virtual Single sprWyniki(PostawionyZaklad^ postawiony) override;
 private:
 	ObiektZakladu^ obiektZakladu2;
 };

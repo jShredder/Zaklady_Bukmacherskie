@@ -1,15 +1,22 @@
-﻿Build started 2015-04-28 11:54:56.
+﻿Build started 2015-05-10 23:13:42.
      1>Project "C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\ZakladBukmacherski2\ZakladBukmacherski2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZakladBukmacherski2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib DodajZespolForm.cpp Form2.cpp Logowanie.cpp WindowsFormApplication1.cpp WprowadzWynikiForm.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZakladBukmacherski2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib DodajZespolForm.cpp Form2.cpp Logowanie.cpp PokazZyskiKlientow.cpp WindowsFormApplication1.cpp WprowadzWynikiForm.cpp
          DodajZespolForm.cpp
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\PokazZyskiKlientow.h(247): warning C4101: 'odczyt2' : unreferenced local variable
          Form2.cpp
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\PokazZyskiKlientow.h(247): warning C4101: 'odczyt2' : unreferenced local variable
          Logowanie.cpp
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\PokazZyskiKlientow.h(247): warning C4101: 'odczyt2' : unreferenced local variable
+         PokazZyskiKlientow.cpp
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\PokazZyskiKlientow.h(247): warning C4101: 'odczyt2' : unreferenced local variable
          WindowsFormApplication1.cpp
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\PokazZyskiKlientow.h(247): warning C4101: 'odczyt2' : unreferenced local variable
          WprowadzWynikiForm.cpp
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\PokazZyskiKlientow.h(247): warning C4101: 'odczyt2' : unreferenced local variable
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.DodajZespolForm.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form1.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form2.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Info.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.WprowadzWynikiForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.DodajZespolForm.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form1.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form2.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Info.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.PokazZyskiKlientow.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.WprowadzWynikiForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
          Debug\DodajZespolForm.obj
          Debug\Form2.obj
@@ -18,6 +25,7 @@
          Debug\KolekcjaKlientow.obj
          Debug\Logowanie.obj
          Debug\ObiektZakladu.obj
+         Debug\PokazZyskiKlientow.obj
          Debug\PostawionyZaklad.obj
          Debug\Rejestracja.obj
          Debug\stdafx.obj
@@ -33,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.46
+Time Elapsed 00:00:05.32

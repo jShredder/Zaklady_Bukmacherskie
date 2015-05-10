@@ -1,9 +1,12 @@
 #pragma once
+#include "Klient.h"
+
 ref class KolekcjaKlientow
 {
-	ArrayList^ klienciList = gcnew ArrayList();
+	List<Klient^>^ listaKlientow = gcnew List<Klient^>();
 public:
 	KolekcjaKlientow();
-	ArrayList^ getKolekcja();
+	List<Klient^>^ getKolekcja();
+	Void zapelnijListeKlientow();
 };
 

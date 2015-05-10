@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "DodajZespolForm.h"
-#include "Klient.h"
+#include "KolekcjaKlientow.h"
 
 namespace ZakladBukmacherski2 {
 
@@ -89,6 +89,7 @@ namespace ZakladBukmacherski2 {
 	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  jakObstawiacToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  wprowadzWynikiToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  pokazBilansKlientowToolStripMenuItem;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -140,6 +141,7 @@ namespace ZakladBukmacherski2 {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->pokazBilansKlientowToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -183,7 +185,10 @@ namespace ZakladBukmacherski2 {
 			// 
 			// klienciToolStripMenuItem
 			// 
-			this->klienciToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->dodajNowegoToolStripMenuItem });
+			this->klienciToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->dodajNowegoToolStripMenuItem,
+					this->pokazBilansKlientowToolStripMenuItem
+			});
 			this->klienciToolStripMenuItem->Name = L"klienciToolStripMenuItem";
 			this->klienciToolStripMenuItem->Size = System::Drawing::Size(54, 20);
 			this->klienciToolStripMenuItem->Text = L"Klienci";
@@ -191,7 +196,7 @@ namespace ZakladBukmacherski2 {
 			// dodajNowegoToolStripMenuItem
 			// 
 			this->dodajNowegoToolStripMenuItem->Name = L"dodajNowegoToolStripMenuItem";
-			this->dodajNowegoToolStripMenuItem->Size = System::Drawing::Size(151, 22);
+			this->dodajNowegoToolStripMenuItem->Size = System::Drawing::Size(187, 22);
 			this->dodajNowegoToolStripMenuItem->Text = L"Dodaj nowego";
 			this->dodajNowegoToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form2::dodajNowegoToolStripMenuItem_Click);
 			// 
@@ -422,6 +427,13 @@ namespace ZakladBukmacherski2 {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form2::dodaj_Click);
 			// 
+			// pokazBilansKlientowToolStripMenuItem
+			// 
+			this->pokazBilansKlientowToolStripMenuItem->Name = L"pokazBilansKlientowToolStripMenuItem";
+			this->pokazBilansKlientowToolStripMenuItem->Size = System::Drawing::Size(187, 22);
+			this->pokazBilansKlientowToolStripMenuItem->Text = L"Pokaz bilans klientow";
+			this->pokazBilansKlientowToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form2::pokazBilansKlientowToolStripMenuItem_Click);
+			// 
 			// Form2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -515,17 +527,17 @@ namespace ZakladBukmacherski2 {
 
 	private: System::Void dodajNowyToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		DodajZespolForm^ dodajZespolForm = gcnew DodajZespolForm(userLogin);
-		
+
 		//this->Hide();
 		dodajZespolForm->Show();
-		
+
 		//ZakladBukmacherski2::Form2^ form2;
 	}
 	private: System::Void dodajZaklad_Click(System::Object^  sender, System::EventArgs^  e) {
 		//label2->Text = dataGridView1->SelectedCells->
-		for each(DataGridViewCell^ dgc in dataGridView1->SelectedCells){
+		/*for each(DataGridViewCell^ dgc in dataGridView1->SelectedCells){
 			label2->Text = dgc->Value->ToString();
-		}
+		}*/
 		//StreamWriter^ plik1 = gcnew StreamWriter("BazaDanych\\klienci.txt", true, System::Text::Encoding::Default);
 		//zapis do pliku ID zak³adu
 		String^ idZak;
@@ -533,7 +545,7 @@ namespace ZakladBukmacherski2 {
 			idZak = dgc->Value->ToString();
 		}
 		//plik1->WriteLine(idZak);
-		PostawionyZaklad^ postawionyZaklad = gcnew PostawionyZaklad(idZak, Single::Parse(textBox5->Text, CultureInfo::InvariantCulture), textBox4->Text);
+		PostawionyZaklad^ postawionyZaklad = gcnew PostawionyZaklad(idZak, textBox4->Text, Int16::Parse(textBox5->Text));
 		klient1->uzupelnijListeZakladow(postawionyZaklad);
 		//plik1->WriteLine(textBox4->Text);
 		//plik1->WriteLine(textBox5->Text);
@@ -542,8 +554,24 @@ namespace ZakladBukmacherski2 {
 	private: System::Void dodaj_Click(System::Object^  sender, System::EventArgs^  e) {
 		zatwierdz->Enabled = true;
 		button2->Enabled = true;
+
+		System::String^ tekst;
+		Int16 id;
+
 		klient1 = gcnew Klient(textBox1->Text, textBox2->Text, textBox3->Text);
 		StreamWriter^ plik1 = gcnew StreamWriter("BazaDanych\\klienci.txt", true, System::Text::Encoding::Default);
+		StreamReader^ plikId = gcnew StreamReader("BazaDanych\\klientID.txt", System::Text::Encoding::Default);
+
+		tekst = plikId->ReadToEnd()->Trim();
+		id = (Int16::Parse(tekst));
+		plikId->Close();
+		id++;
+
+		StreamWriter^ plik2 = gcnew StreamWriter("BazaDanych\\klientID.txt", false, System::Text::Encoding::Default);
+		plik2->Write(id.ToString());
+		plik2->Close();
+
+		plik1->WriteLine("klientId="+id);
 		plik1->WriteLine(klient1->getImie());
 		plik1->WriteLine(klient1->getNazwisko());
 		plik1->WriteLine(klient1->getTelefon());
@@ -563,13 +591,17 @@ namespace ZakladBukmacherski2 {
 		plik1->WriteLine("##########");
 		plik1->Close();
 	}
-private: System::Void jakObstawiacToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	Info^ info = gcnew Info();
-	info->ShowDialog();
-}
-private: System::Void wprowadzWynikiToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-	WprowadzWynikiForm^ wprowadzWynikiForm = gcnew WprowadzWynikiForm(userLogin);
-	wprowadzWynikiForm->Show();
-}
+	private: System::Void jakObstawiacToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		Info^ info = gcnew Info();
+		info->ShowDialog();
+	}
+	private: System::Void wprowadzWynikiToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		WprowadzWynikiForm^ wprowadzWynikiForm = gcnew WprowadzWynikiForm(userLogin);
+		wprowadzWynikiForm->Show();
+	}
+	private: System::Void pokazBilansKlientowToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		PokazZyskiKlientow^ pokazZyskiForm = gcnew PokazZyskiKlientow(userLogin);
+		pokazZyskiForm->Show();
+	}
 };
 }

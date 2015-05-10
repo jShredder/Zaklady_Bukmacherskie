@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Zaklad.h"
 
-
 Zaklad::Zaklad()
 {
 }
@@ -14,6 +13,6 @@ Void Zaklad::dodajNowyZaklad(){
 
 }
 
-Void Zaklad::sprWyniki(Zaklad^ postawiony, Zaklad^ wynik){
-
+Single Zaklad::sprWyniki(PostawionyZaklad^ postawiony){
+	return 0;
 }

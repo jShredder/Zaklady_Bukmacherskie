@@ -2,7 +2,7 @@
 #include "PostawionyZaklad.h"
 
 
-PostawionyZaklad::PostawionyZaklad(String^ i, Single k, String^ w) :ID_zakladu(i), kwota(k), wynik(w)
+PostawionyZaklad::PostawionyZaklad(String^ i, String^ w, Int16 k) :ID_zakladu(i), wynik(w), kwota(k)
 {
 }
 
@@ -12,7 +12,7 @@ String^ PostawionyZaklad::getID_zakladu(){
 	return ID_zakladu;
 }
 
-Single PostawionyZaklad::getKwota(){
+Int16 PostawionyZaklad::getKwota(){
 	return kwota;
 }
 
