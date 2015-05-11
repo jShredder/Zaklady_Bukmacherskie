@@ -5,7 +5,7 @@ Logowanie::Logowanie(System::String^ log1, System::String^ has1) : Rejestracja(l
 {
 }
 
-System::Boolean Logowanie::weryfikujDane(){
+System::Boolean Logowanie::weryfikujDane(Form^ form1){
 	StreamReader^ sr1 = gcnew StreamReader("BazaDanych\\logowanie.txt", System::Text::Encoding::Default);
 	ZakladBukmacherski2::Form2^ form2;
 	System::String^ str;
@@ -15,8 +15,9 @@ System::Boolean Logowanie::weryfikujDane(){
 		if (str->Equals(getLogin())){
 			str = sr1->ReadLine();
 			if (str->Equals(getHaslo())){
-				form2 = gcnew ZakladBukmacherski2::Form2(getLogin());
+				form2 = gcnew ZakladBukmacherski2::Form2(getLogin(), form1);
 				form2->Show();
+				form1->Hide();
 				isCorrect = true;
 			}
 		}

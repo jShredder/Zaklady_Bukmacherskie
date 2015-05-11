@@ -15,6 +15,10 @@ namespace ZakladBukmacherski2 {
 	/// </summary>
 	public ref class WprowadzWynikiForm : public System::Windows::Forms::Form
 	{
+	private:
+		Form^ logowanieForm;
+	private: System::Windows::Forms::ToolStripMenuItem^  wsteczToolStripMenuItem;
+			 Form^ form1;
 	public:
 		WprowadzWynikiForm(void)
 		{
@@ -23,11 +27,13 @@ namespace ZakladBukmacherski2 {
 			//TODO: Add the constructor code here
 			//
 		}
-		
-		WprowadzWynikiForm(String^ login)
+
+		WprowadzWynikiForm(String^ login, Form^ form, Form^ log)
 		{
 			InitializeComponent();
 			userLogin = login;
+			form1 = form;
+			logowanieForm = log;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -46,11 +52,11 @@ namespace ZakladBukmacherski2 {
 	private: String^ userLogin;
 	private: System::Windows::Forms::DataGridView^  dataGridView1;
 	protected:
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
+
+
+
+
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  textBox1;
@@ -68,6 +74,27 @@ namespace ZakladBukmacherski2 {
 
 	private: System::Windows::Forms::Button^  zatwierdz;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
+	private: System::Windows::Forms::MenuStrip^  menuStrip1;
+
+
+	private: System::Windows::Forms::ToolStripMenuItem^  pomocToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  jakObstawiacToolStripMenuItem;
+
+
+
+
+
+
+
+	private: System::Windows::Forms::ToolStripMenuItem^  wylogujToolStripMenuItem;
+
+
+
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -94,7 +121,13 @@ namespace ZakladBukmacherski2 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->zatwierdz = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->wsteczToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->pomocToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->jakObstawiacToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->wylogujToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
@@ -106,9 +139,9 @@ namespace ZakladBukmacherski2 {
 			});
 			this->dataGridView1->Location = System::Drawing::Point(135, 85);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataGridView1->Size = System::Drawing::Size(544, 231);
 			this->dataGridView1->TabIndex = 6;
-			this->dataGridView1->RowCount = 100;
 			// 
 			// Column1
 			// 
@@ -120,32 +153,36 @@ namespace ZakladBukmacherski2 {
 			// 
 			this->Column2->HeaderText = L"Rodzaj zakladu";
 			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
 			// 
 			// Column3
 			// 
 			this->Column3->HeaderText = L"Zespó³ 1";
 			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
 			// 
 			// Column4
 			// 
 			this->Column4->HeaderText = L"Zespó³ 2";
 			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
 			// 
 			// Column5
 			// 
 			this->Column5->HeaderText = L"Zespó³ 3";
 			this->Column5->Name = L"Column5";
+			this->Column5->ReadOnly = true;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label1->Location = System::Drawing::Point(168, 27);
+			this->label1->Location = System::Drawing::Point(168, 48);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(470, 20);
+			this->label1->Size = System::Drawing::Size(477, 20);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"Kliknij ID meczu i wprowadŸ wynik zgodny z przyjêtym standardem";
+			this->label1->Text = L"Zaznacz zawody i wprowadŸ wynik zgodny z przyjêtym standardem";
 			// 
 			// label2
 			// 
@@ -178,16 +215,57 @@ namespace ZakladBukmacherski2 {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(624, 9);
+			this->label3->Location = System::Drawing::Point(614, 35);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(111, 13);
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Zalogowany jako: ";
 			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->wsteczToolStripMenuItem,
+					this->pomocToolStripMenuItem, this->wylogujToolStripMenuItem
+			});
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(784, 24);
+			this->menuStrip1->TabIndex = 13;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// wsteczToolStripMenuItem
+			// 
+			this->wsteczToolStripMenuItem->Name = L"wsteczToolStripMenuItem";
+			this->wsteczToolStripMenuItem->Size = System::Drawing::Size(56, 20);
+			this->wsteczToolStripMenuItem->Text = L"Wstecz";
+			this->wsteczToolStripMenuItem->Click += gcnew System::EventHandler(this, &WprowadzWynikiForm::wsteczToolStripMenuItem_Click);
+			// 
+			// pomocToolStripMenuItem
+			// 
+			this->pomocToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->jakObstawiacToolStripMenuItem });
+			this->pomocToolStripMenuItem->Name = L"pomocToolStripMenuItem";
+			this->pomocToolStripMenuItem->Size = System::Drawing::Size(57, 20);
+			this->pomocToolStripMenuItem->Text = L"Pomoc";
+			// 
+			// jakObstawiacToolStripMenuItem
+			// 
+			this->jakObstawiacToolStripMenuItem->Name = L"jakObstawiacToolStripMenuItem";
+			this->jakObstawiacToolStripMenuItem->Size = System::Drawing::Size(146, 22);
+			this->jakObstawiacToolStripMenuItem->Text = L"Jak obstawiaæ";
+			this->jakObstawiacToolStripMenuItem->Click += gcnew System::EventHandler(this, &WprowadzWynikiForm::jakObstawiacToolStripMenuItem_Click);
+			// 
+			// wylogujToolStripMenuItem
+			// 
+			this->wylogujToolStripMenuItem->Name = L"wylogujToolStripMenuItem";
+			this->wylogujToolStripMenuItem->Size = System::Drawing::Size(63, 20);
+			this->wylogujToolStripMenuItem->Text = L"Wyloguj";
+			this->wylogujToolStripMenuItem->Click += gcnew System::EventHandler(this, &WprowadzWynikiForm::wylogujToolStripMenuItem_Click);
+			// 
 			// WprowadzWynikiForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightBlue;
 			this->ClientSize = System::Drawing::Size(784, 562);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->zatwierdz);
@@ -195,10 +273,15 @@ namespace ZakladBukmacherski2 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"WprowadzWynikiForm";
 			this->Text = L"WprowadzWynikiForm";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &WprowadzWynikiForm::WprowadzWynikiForm_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &WprowadzWynikiForm::WprowadzWynikiForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -206,64 +289,127 @@ namespace ZakladBukmacherski2 {
 	private: Void wczytajDatagrid1(){
 		StreamReader^ plik1 = gcnew StreamReader("BazaDanych\\zakladID.txt", System::Text::Encoding::Default);
 		StreamReader^ plik2 = gcnew StreamReader("BazaDanych\\druzyny.txt", System::Text::Encoding::Default);
+		
 		Int16 liczbaZakladow = Int16::Parse(plik1->ReadToEnd()->Trim());
-		Int16 typ;
+		Int16 typ, index=0;
+		String^ id_zakladu;
+		String^ czyKoniec;
 		plik1->Close();
 
 		for (Int16 i = 0; i < liczbaZakladow; i++){
-			dataGridView1->Rows[i]->Cells[0]->Value = plik2->ReadLine();	//id
+
+			//id_zakladu = plikSpr->ReadLine();
+
+			StreamReader^ plik3 = gcnew StreamReader("BazaDanych\\wyniki.txt", System::Text::Encoding::Default);
+			//if (String::IsNullOrEmpty(czyKoniec)){
+			id_zakladu = plik2->ReadLine();
+
+			do{
+				czyKoniec = plik3->ReadLine();
+
+				if (id_zakladu->Equals(czyKoniec)){
+					czyKoniec = "tak";
+					break;
+				}
+			} while (!String::IsNullOrEmpty(czyKoniec));
+
+			plik3->Close();
+
+			if (String::IsNullOrEmpty(czyKoniec))
+				dataGridView1->Rows[index]->Cells[0]->Value = id_zakladu;	//id
+
 			typ = Int16::Parse(plik2->ReadLine());//typ
 			switch (typ){
 			case 1:
-				dataGridView1->Rows[i]->Cells[2]->Value = plik2->ReadLine();	//z1
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[3]->Value = plik2->ReadLine();	//z2
-				dataGridView1->Rows[i]->Cells[4]->Value = "";	//z3
-				plik2->ReadLine();
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[1]->Value = "pilka nozna";	//z3
+				if (String::IsNullOrEmpty(czyKoniec)){
+					dataGridView1->Rows[index]->Cells[2]->Value = plik2->ReadLine();	//z1
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[3]->Value = plik2->ReadLine();	//z2
+					dataGridView1->Rows[index]->Cells[4]->Value = "";	//z3
+					plik2->ReadLine();
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[1]->Value = "pilka nozna";	//z3
+					index++;
+				}
+				else{
+					for (int k = 0; k < 5; k++)
+						plik2->ReadLine();
+				}
 				break;
 			case 2:
-				dataGridView1->Rows[i]->Cells[2]->Value = plik2->ReadLine();	//z1
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[3]->Value = plik2->ReadLine();	//z2
-				dataGridView1->Rows[i]->Cells[4]->Value = "";	//z3
-				plik2->ReadLine();
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[1]->Value = "koszykowka";	//z3
+				if (String::IsNullOrEmpty(czyKoniec)){
+					dataGridView1->Rows[index]->Cells[2]->Value = plik2->ReadLine();	//z1
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[3]->Value = plik2->ReadLine();	//z2
+					dataGridView1->Rows[index]->Cells[4]->Value = "";	//z3
+					plik2->ReadLine();
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[1]->Value = "koszykowka";	//z3
+					index++;
+				}
+				else{
+					for (int k = 0; k < 5; k++)
+						plik2->ReadLine();
+				}
 				break;
 			case 3:
-				dataGridView1->Rows[i]->Cells[2]->Value = plik2->ReadLine();	//z1
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[3]->Value = plik2->ReadLine();	//z2
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[4]->Value = plik2->ReadLine();	//z3
-				plik2->ReadLine();
-				plik2->ReadLine();
-				dataGridView1->Rows[i]->Cells[1]->Value = "Formula 1";	//z3
+				if (String::IsNullOrEmpty(czyKoniec)){
+					dataGridView1->Rows[index]->Cells[2]->Value = plik2->ReadLine();	//z1
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[3]->Value = plik2->ReadLine();	//z2
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[4]->Value = plik2->ReadLine();	//z3
+					plik2->ReadLine();
+					plik2->ReadLine();
+					dataGridView1->Rows[index]->Cells[1]->Value = "Formula 1";	//z3
+					index++;
+				}
+				else{
+					for (int k = 0; k < 7; k++)
+						plik2->ReadLine();
+				}
 				break;
 			}
-
+			//}
 		}
 		plik2->Close();
 	}
 #pragma endregion
 	private: System::Void WprowadzWynikiForm_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->dataGridView1->RowCount = 100;
 		Rectangle ekran = System::Windows::Forms::Screen::GetBounds(this);
 		this->Top = (ekran.Height / 2) - (this->Height / 2);
 		this->Left = (ekran.Width / 2) - (this->Width / 2);
 		wczytajDatagrid1();
 		label3->Text += userLogin;
 	}
-private: System::Void zatwierdz_Click(System::Object^  sender, System::EventArgs^  e) {
-	StreamWriter^ plik = gcnew StreamWriter("BazaDanych\\wyniki.txt", true, System::Text::Encoding::Default);
-	String^ idZak;
-	for each(DataGridViewCell^ dgc in dataGridView1->SelectedCells){
-		idZak = dgc->Value->ToString();
+	private: System::Void zatwierdz_Click(System::Object^  sender, System::EventArgs^  e) {
+		StreamWriter^ plik = gcnew StreamWriter("BazaDanych\\wyniki.txt", true, System::Text::Encoding::Default);
+		String^ idZak;
+
+		idZak = dataGridView1->SelectedCells[0]->Value->ToString();
+
+		plik->WriteLine(idZak);
+		plik->WriteLine(textBox1->Text);
+		plik->Close();
 	}
-	plik->WriteLine(idZak);
-	plik->WriteLine(textBox1->Text);
-	plik->Close();
+	private: System::Void dodajNowegoToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		
+	}
+private: System::Void wylogujToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Hide();
+	logowanieForm->Show();
+}
+private: System::Void jakObstawiacToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+//	Info^ info = gcnew Info();
+//	info->ShowDialog();
+}
+private: System::Void wsteczToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	form1->Show();
+	this->Hide();
+}
+private: System::Void WprowadzWynikiForm_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
+	logowanieForm->Close();
 }
 };
 }

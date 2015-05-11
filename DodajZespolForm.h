@@ -18,6 +18,10 @@ namespace ZakladBukmacherski2 {
 	/// </summary>
 	public ref class DodajZespolForm : public System::Windows::Forms::Form
 	{
+	private:
+		Form^ form2;
+	private: System::Windows::Forms::ToolStripMenuItem^  wylogujToolStripMenuItem;
+			 Form^ logowanieForm;
 	public:
 		DodajZespolForm(void)
 		{
@@ -29,10 +33,12 @@ namespace ZakladBukmacherski2 {
 			//TODO: Add the constructor code here
 			//
 		}
-		DodajZespolForm(String^ login)
+		DodajZespolForm(String^ login, Form^ form, Form^ log)
 		{
 			InitializeComponent();
 			userLogin = login;
+			form2 = form;
+			logowanieForm = log;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -75,6 +81,10 @@ namespace ZakladBukmacherski2 {
 	private: System::Windows::Forms::ToolStripMenuItem^  obiektZakladuToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  wprowadzWynikiToolStripMenuItem;
 	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::ToolStripMenuItem^  pokazBilansKlientowToolStripMenuItem;
+
+
+	private: System::Windows::Forms::ToolStripMenuItem^  dodajNowyToolStripMenuItem;
 
 
 
@@ -115,10 +125,13 @@ namespace ZakladBukmacherski2 {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->aAAToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dodajNowegoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->pokazBilansKlientowToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->obiektZakladuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->wprowadzWynikiToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->dodajNowyToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pomocToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->jakObstawiacToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->wylogujToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -158,6 +171,7 @@ namespace ZakladBukmacherski2 {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 21);
 			this->comboBox1->TabIndex = 4;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &DodajZespolForm::comboBox1_SelectedIndexChanged);
 			// 
 			// groupBox1
 			// 
@@ -173,7 +187,7 @@ namespace ZakladBukmacherski2 {
 			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Location = System::Drawing::Point(57, 38);
+			this->groupBox1->Location = System::Drawing::Point(60, 59);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(680, 491);
 			this->groupBox1->TabIndex = 5;
@@ -260,6 +274,7 @@ namespace ZakladBukmacherski2 {
 			// 
 			// button1
 			// 
+			this->button1->Enabled = false;
 			this->button1->Location = System::Drawing::Point(234, 350);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(158, 23);
@@ -286,9 +301,9 @@ namespace ZakladBukmacherski2 {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->aAAToolStripMenuItem,
-					this->obiektZakladuToolStripMenuItem, this->pomocToolStripMenuItem
+					this->obiektZakladuToolStripMenuItem, this->pomocToolStripMenuItem, this->wylogujToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -298,7 +313,10 @@ namespace ZakladBukmacherski2 {
 			// 
 			// aAAToolStripMenuItem
 			// 
-			this->aAAToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->dodajNowegoToolStripMenuItem });
+			this->aAAToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->dodajNowegoToolStripMenuItem,
+					this->pokazBilansKlientowToolStripMenuItem
+			});
 			this->aAAToolStripMenuItem->Name = L"aAAToolStripMenuItem";
 			this->aAAToolStripMenuItem->Size = System::Drawing::Size(54, 20);
 			this->aAAToolStripMenuItem->Text = L"Klienci";
@@ -306,12 +324,23 @@ namespace ZakladBukmacherski2 {
 			// dodajNowegoToolStripMenuItem
 			// 
 			this->dodajNowegoToolStripMenuItem->Name = L"dodajNowegoToolStripMenuItem";
-			this->dodajNowegoToolStripMenuItem->Size = System::Drawing::Size(151, 22);
+			this->dodajNowegoToolStripMenuItem->Size = System::Drawing::Size(187, 22);
 			this->dodajNowegoToolStripMenuItem->Text = L"Dodaj nowego";
+			this->dodajNowegoToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::dodajNowegoToolStripMenuItem_Click);
+			// 
+			// pokazBilansKlientowToolStripMenuItem
+			// 
+			this->pokazBilansKlientowToolStripMenuItem->Name = L"pokazBilansKlientowToolStripMenuItem";
+			this->pokazBilansKlientowToolStripMenuItem->Size = System::Drawing::Size(187, 22);
+			this->pokazBilansKlientowToolStripMenuItem->Text = L"Poka¿ bilans klientów";
+			this->pokazBilansKlientowToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::pokazBilansKlientowToolStripMenuItem_Click);
 			// 
 			// obiektZakladuToolStripMenuItem
 			// 
-			this->obiektZakladuToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->wprowadzWynikiToolStripMenuItem });
+			this->obiektZakladuToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->wprowadzWynikiToolStripMenuItem,
+					this->dodajNowyToolStripMenuItem
+			});
 			this->obiektZakladuToolStripMenuItem->Name = L"obiektZakladuToolStripMenuItem";
 			this->obiektZakladuToolStripMenuItem->Size = System::Drawing::Size(97, 20);
 			this->obiektZakladuToolStripMenuItem->Text = L"Obiekt zakladu";
@@ -322,6 +351,13 @@ namespace ZakladBukmacherski2 {
 			this->wprowadzWynikiToolStripMenuItem->Size = System::Drawing::Size(167, 22);
 			this->wprowadzWynikiToolStripMenuItem->Text = L"WprowadŸ wyniki";
 			this->wprowadzWynikiToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::wprowadzWynikiToolStripMenuItem_Click);
+			// 
+			// dodajNowyToolStripMenuItem
+			// 
+			this->dodajNowyToolStripMenuItem->Name = L"dodajNowyToolStripMenuItem";
+			this->dodajNowyToolStripMenuItem->Size = System::Drawing::Size(167, 22);
+			this->dodajNowyToolStripMenuItem->Text = L"Dodaj nowy";
+			this->dodajNowyToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::dodajNowyToolStripMenuItem_Click);
 			// 
 			// pomocToolStripMenuItem
 			// 
@@ -337,14 +373,21 @@ namespace ZakladBukmacherski2 {
 			this->jakObstawiacToolStripMenuItem->Text = L"Jak obstawiaæ";
 			this->jakObstawiacToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::jakObstawiacToolStripMenuItem_Click);
 			// 
+			// wylogujToolStripMenuItem
+			// 
+			this->wylogujToolStripMenuItem->Name = L"wylogujToolStripMenuItem";
+			this->wylogujToolStripMenuItem->Size = System::Drawing::Size(63, 20);
+			this->wylogujToolStripMenuItem->Text = L"Wyloguj";
+			this->wylogujToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::wylogujToolStripMenuItem_Click);
+			// 
 			// label8
 			// 
+			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(581, 9);
+			this->label8->Location = System::Drawing::Point(586, 33);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(94, 13);
+			this->label8->Size = System::Drawing::Size(111, 13);
 			this->label8->TabIndex = 7;
 			this->label8->Text = L"Zalogowany jako: ";
 			// 
@@ -352,6 +395,7 @@ namespace ZakladBukmacherski2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightBlue;
 			this->ClientSize = System::Drawing::Size(784, 562);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->groupBox1);
@@ -359,6 +403,7 @@ namespace ZakladBukmacherski2 {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"DodajZespolForm";
 			this->Text = L"DodajZespolForm";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &DodajZespolForm::DodajZespolForm_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &DodajZespolForm::DodajZespolForm_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -404,12 +449,36 @@ private: System::Void jakObstawiacToolStripMenuItem_Click(System::Object^  sende
 	info->ShowDialog();
 }
 private: System::Void wprowadzWynikiToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	WprowadzWynikiForm^ wprowadzWynikiForm = gcnew WprowadzWynikiForm(userLogin, this, logowanieForm);
+	this->Hide();
+	wprowadzWynikiForm->Show();
 }
 private: System::Void DodajZespolForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	label8->Text += userLogin;
 	Rectangle ekran = System::Windows::Forms::Screen::GetBounds(this);
 	this->Top = (ekran.Height / 2) - (this->Height / 2);
 	this->Left = (ekran.Width / 2) - (this->Width / 2);
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	button1->Enabled = true;
+}
+private: System::Void dodajNowegoToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	form2->Show();
+	this->Hide();
+}
+private: System::Void pokazBilansKlientowToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	PokazZyskiKlientow^ pokazZyskiForm = gcnew PokazZyskiKlientow(userLogin, this, logowanieForm);
+	pokazZyskiForm->Show();
+	this->Hide();
+}
+private: System::Void dodajNowyToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void wylogujToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Hide();
+	logowanieForm->Show();
+}
+private: System::Void DodajZespolForm_FormClosed(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
+	logowanieForm->Close();
 }
 };
 }

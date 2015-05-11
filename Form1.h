@@ -172,6 +172,7 @@ namespace ZakladBukmacherski2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightBlue;
 			this->ClientSize = System::Drawing::Size(784, 562);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
@@ -190,8 +191,12 @@ namespace ZakladBukmacherski2 {
 #pragma endregion
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		Form^ regForm = gcnew Form;
+		Rectangle ekran = System::Windows::Forms::Screen::GetBounds(this);
+		regForm->Top = (ekran.Height / 2) - (this->Height / 2);
+		regForm->Left = (ekran.Width / 2) - (this->Width / 2);
 		regForm->Width = 500;
 		regForm->Height = 400;
+		regForm->BackColor = Color::LightBlue;
 		// pole tekstowe
 		Label^ label3 = gcnew Label;
 		label3->Text = "Rejestracja";
@@ -235,8 +240,8 @@ namespace ZakladBukmacherski2 {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		Logowanie^ logowanie = gcnew Logowanie(textBox1->Text, textBox2->Text);
 
-		if (logowanie->weryfikujDane()){			
-			//this->Hide();
+		if (logowanie->weryfikujDane(this)){			
+			this->Hide();
 		}
 		else{
 			label4->Text = "Wprowadzone dane s¹ nieprawid³owe. Spróbuj ponownie.";
