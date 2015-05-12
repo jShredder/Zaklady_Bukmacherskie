@@ -401,8 +401,8 @@ private: System::Void wylogujToolStripMenuItem_Click(System::Object^  sender, Sy
 	logowanieForm->Show();
 }
 private: System::Void jakObstawiacToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-//	Info^ info = gcnew Info();
-//	info->ShowDialog();
+	Info^ info = gcnew Info();
+	info->ShowDialog();
 }
 private: System::Void wsteczToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	form1->Show();

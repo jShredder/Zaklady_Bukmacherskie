@@ -120,10 +120,23 @@
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>Przy typowaniu wyników zakładów obowiązują oznaczenia:
 
-1 - oznacza, że typujesz na zwyciezcę gospodarza spotkania lub na zawodnika, który jest wymieniony jako pierwszy;
-2 - oznacza, że typujesz zwycięstwo gości, lub uczestnika zdarzenia wymienionego na drugim miejscu;
-0 - oznacza, że typujesz remis w danym spotkaniu;
-10 - tzw. typ z podpórką: oznacza, że typujesz zwycięstwo gospodarzy oraz remis, w tym wypadku przegrywasz tylko w wypadku wygranej gości;
-02 - także typ z podpórką: oznacza, że typujesz remis spotkania, a także wygraną gości. W tym wypadku przegrywasz tylko w wypadku wygranej gospodarzy spotkania.</value>
+a)w zakładach piłkarskich
+
+1 - oznacza, że typujesz na zwyciezcę zespół, który jest wymieniony jako pierwszy
+2 - oznacza, że typujesz zwycięstwo zespołu wymienionego na drugim miejscu
+0 - oznacza, że typujesz remis w danym spotkaniu
+10 - tzw. typ z podpórką: oznacza, że typujesz zwycięstwo lub remis zespołu wymienionego jako pierwszy
+02 - tzw. typ z podpórką: oznacza, że typujesz zwycięstwo lub remis zespołu wymienionego jako drugi
+
+b)w zakładach koszykarskich
+
+1 - oznacza, że typujesz na zwyciezcę zespół, który jest wymieniony jako pierwszy
+2 - oznacza, że typujesz zwycięstwo zespołu wymienionego na drugim miejscu
+
+c)w zakładach Formuły 1
+
+1 - oznacza, że typujesz na zwyciezcę zawodnika, który jest wymieniony jako pierwszy
+2 - oznacza, że typujesz na zwyciezcę zawodnika, który jest wymieniony jako drugi
+3 - oznacza, że typujesz na zwyciezcę zawodnika, który jest wymieniony jako trzeci</value>
   </data>
 </root>

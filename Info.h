@@ -58,7 +58,7 @@ namespace ZakladBukmacherski2 {
 			// 
 			this->richTextBox1->Location = System::Drawing::Point(12, 12);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(392, 183);
+			this->richTextBox1->Size = System::Drawing::Size(392, 321);
 			this->richTextBox1->TabIndex = 0;
 			this->richTextBox1->Text = resources->GetString(L"richTextBox1.Text");
 			this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &Info::richTextBox1_TextChanged);
@@ -67,7 +67,7 @@ namespace ZakladBukmacherski2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(407, 206);
+			this->ClientSize = System::Drawing::Size(407, 345);
 			this->Controls->Add(this->richTextBox1);
 			this->Name = L"Info";
 			this->Text = L"Info";

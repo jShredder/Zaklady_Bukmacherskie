@@ -1,7 +1,6 @@
 #pragma once
 #include "Zaklad.h"
 #include "ZakladFormula1.h"
-#include "Info.h"
 #include "WprowadzWynikiForm.h"
 
 namespace ZakladBukmacherski2 {
