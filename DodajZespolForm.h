@@ -323,15 +323,15 @@ namespace ZakladBukmacherski2 {
 			// dodajNowegoToolStripMenuItem
 			// 
 			this->dodajNowegoToolStripMenuItem->Name = L"dodajNowegoToolStripMenuItem";
-			this->dodajNowegoToolStripMenuItem->Size = System::Drawing::Size(187, 22);
+			this->dodajNowegoToolStripMenuItem->Size = System::Drawing::Size(181, 22);
 			this->dodajNowegoToolStripMenuItem->Text = L"Dodaj nowego";
 			this->dodajNowegoToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::dodajNowegoToolStripMenuItem_Click);
 			// 
 			// pokazBilansKlientowToolStripMenuItem
 			// 
 			this->pokazBilansKlientowToolStripMenuItem->Name = L"pokazBilansKlientowToolStripMenuItem";
-			this->pokazBilansKlientowToolStripMenuItem->Size = System::Drawing::Size(187, 22);
-			this->pokazBilansKlientowToolStripMenuItem->Text = L"Poka¿ bilans klientów";
+			this->pokazBilansKlientowToolStripMenuItem->Size = System::Drawing::Size(181, 22);
+			this->pokazBilansKlientowToolStripMenuItem->Text = L"Poka¿ zyski klientów";
 			this->pokazBilansKlientowToolStripMenuItem->Click += gcnew System::EventHandler(this, &DodajZespolForm::pokazBilansKlientowToolStripMenuItem_Click);
 			// 
 			// obiektZakladuToolStripMenuItem

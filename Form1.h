@@ -191,9 +191,9 @@ namespace ZakladBukmacherski2 {
 #pragma endregion
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		Form^ regForm = gcnew Form;
-		Rectangle ekran = System::Windows::Forms::Screen::GetBounds(this);
-		regForm->Top = (ekran.Height / 2) - (this->Height / 2);
-		regForm->Left = (ekran.Width / 2) - (this->Width / 2);
+		Rectangle ekran = System::Windows::Forms::Screen::GetBounds(regForm);
+		regForm->Top = (ekran.Height / 2) - (regForm->Height / 2);
+		regForm->Left = (ekran.Width / 2) - (regForm->Width / 2);
 		regForm->Width = 500;
 		regForm->Height = 400;
 		regForm->BackColor = Color::LightBlue;
