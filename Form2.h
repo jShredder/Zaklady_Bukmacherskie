@@ -348,6 +348,8 @@ namespace ZakladBukmacherski2 {
 			this->button2->Size = System::Drawing::Size(128, 23);
 			this->button2->TabIndex = 8;
 			this->button2->Text = L"ZtwierdŸ dane";
+			this->toolTip1->SetToolTip(this->button2, L"Kliknij, aby zakoñczyæ wprowadzanie informacji o meczach obstawionych\r\nprzez dane"
+				L"go klienta");
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form2::button2_Click);
 			// 
@@ -421,6 +423,7 @@ namespace ZakladBukmacherski2 {
 			this->zatwierdz->Size = System::Drawing::Size(128, 23);
 			this->zatwierdz->TabIndex = 4;
 			this->zatwierdz->Text = L"Dodaj kolejny";
+			this->toolTip1->SetToolTip(this->zatwierdz, L"Kliknij, aby przypisaæ nowy zak³ad danemu klientowi");
 			this->zatwierdz->UseVisualStyleBackColor = true;
 			this->zatwierdz->Click += gcnew System::EventHandler(this, &Form2::dodajZaklad_Click);
 			// 

@@ -65,7 +65,6 @@ Single ZakladPilkarski::sprWyniki(PostawionyZaklad^ postawiony){
 	} while (!String::IsNullOrEmpty(czyKoniec));
 
 	
-
 	if (!String::IsNullOrEmpty(czyKoniec)){
 		wynik = plikWyniki->ReadLine();
 		wynikOpcjonalny = wynik + "0";
@@ -81,11 +80,11 @@ Single ZakladPilkarski::sprWyniki(PostawionyZaklad^ postawiony){
 			}
 		}
 		else if (postawiony->getWynik()->Equals(wynikOpcjonalny)){
-			if (wynik->Equals("10")){
+			if (postawiony->getWynik()->Equals("10")){
 				zysk = postawiony->getKwota()*((kurs1-1)/3);
 				return zysk;
 			}
-			else if (wynik->Equals("20")){
+			else if (postawiony->getWynik()->Equals("20")){
 				zysk = postawiony->getKwota()*((kurs2 - 1) / 3);
 				return zysk;
 			}

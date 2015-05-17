@@ -1,11 +1,13 @@
-﻿Build started 2015-05-12 20:48:08.
+﻿Build started 2015-05-17 17:14:13.
      1>Project "C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\ZakladBukmacherski2\ZakladBukmacherski2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZakladBukmacherski2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib Logowanie.cpp Rejestracja.cpp WindowsFormApplication1.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ZakladBukmacherski2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib Form2.cpp Logowanie.cpp WindowsFormApplication1.cpp ZakladPilkarski.cpp
+         Form2.cpp
          Logowanie.cpp
-         Rejestracja.cpp
          WindowsFormApplication1.cpp
+         ZakladPilkarski.cpp
          Generating Code...
+     1>c:\users\freeq\desktop\sem_2\ojp ii\zakladbukmacherski2\zakladbukmacherski2\zakladpilkarski.cpp(100): warning C4715: 'ZakladPilkarski::sprWyniki' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.DodajZespolForm.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form1.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Form2.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.Info.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.PokazZyskiKlientow.resources /ASSEMBLYRESOURCE:Debug\ZakladBukmacherski2.WprowadzWynikiForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\freeq\Desktop\SEM_2\OJP II\ZakladBukmacherski2\Debug\ZakladBukmacherski2.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
@@ -32,4 +34,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.19
+Time Elapsed 00:00:05.44
